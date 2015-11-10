@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+</html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Yearbook Login</title>
+
+		<script type="text/javascript">
+			<!--
+			    //pop up page
+			    function toggle_visibility(id) {
+			       var e = document.getElementById(id);
+			       if(e.style.display == 'block')
+			          e.style.display = 'none';
+			       else
+			          e.style.display = 'block';
+			    }
+			    //resets the page
+			    function reloading() {
+			       location.reload(true);
+			    }
+			    //sends user data to database
+			    function submit(id) {
+			       var inputtext = document.getElementById('login').value;
+			       if (isNaN(parseInt(inputtext)) || parseInt(inputtext,10)<100000 || parseInt(inputtext,10)>999999) {
+			           var text = "Sorry, your input is not valid. Please try again!";
+				   document.getElementById("demo").innerHTML = text;
+				   document.getElementById('login').value = "";
+				   setTimeout(function() {
+				       document.getElementById("demo").innerHTML = "";
+				   },5000)
+			       } else {
+				   //send data to mySQL database
+				   //direct to you are done page
+			           window.location.href=id;
+			           //reload page if user has successfully finished
+			           setTimeout(function() {
+			               location.reload(true);
+			           },10000)
+			       }
+			    }
+			    function logout(id) {
+			       var inputtext = document.getElementById('logout').value;
+			       if (isNaN(parseInt(inputtext)) || parseInt(inputtext,10)<100000 || parseInt(inputtext,10)>999999) {
+			           var text = "Sorry, your input is not valid. Please try again!";
+				   document.getElementById("demo1").innerHTML = text;
+				   document.getElementById('logout').value = "";
+				   setTimeout(function() {
+				       document.getElementById("demo1").innerHTML = "";
+				   },5000)
+			       } else {
+				   //send data to mySQL database
+				   //direct to you are done page
+			           window.location.href=id;
+			           //reload page if user has successfully finished
+			           setTimeout(function() {
+			               location.reload(true);
+			           },10000)
+			       }
+			    }
+
+			//-->
+		</script>
+
+		<style type="text/css">
+
+			html {background: url(images/back1.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+			body, html {height:100%;}
+			.wrap {height:100%; overflow: hidden;}
+			body {overflow: hidden;}
+			#vistext {text-align: center; color: white; font-family: Calibri, sans-serif;}
+			#header {padding-top: 12%; font-weight: bold; font-size: 100px;}
+			#popupBoxOnePosition, #popupBoxTwoPosition {top: 0; left: 0; position: fixed; width: 100%; height: 120%; background-color: rgba(0,0,0,0.5); display: none;}
+			.topcorner {float: right;}
+			.popupBoxWrapper{width: 90%; height: 80%; margin: 100px auto; text-align: left; overflow: scroll;}
+			.popupBoxContent{background: url(images/maxresdefault.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 80%; width: 400%; text-align: center; overflow: scroll; position: relative;}
+			.slide1, .slide2, .slide3, .slide4 {float: left; width: 25%; height: 100%;}
+			.slide2 {background-color: brown;}
+			.slide3 {background: url(images/tools.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+			.nav {list-style: none; padding-top: 1%;}
+			.nav a {color: white; text-decoration: none; font-size: 50px;}
+			.nav li {margin: auto; background-color: rgba(0,0,0,0.3); padding: 30px; border: 1px solid silver; border-radius: 5px; width: 30%;}
+			.topcorner a {text-decoration: none;}
+			.topcorner img:hover, .topcorner div:hover, .hovering div:hover {-webkit-transform:scale(1.05); /* Safari and Chrome */ -moz-transform:scale(1.05); /* Firefox */ -ms-transform:scale(1.05); /* IE 9 */ -o-transform:scale(1.05); /* Opera */ transform:scale(1.05);}
+			.nav li:hover {background-color: rgba(0,0,0,0.1);}
+			.navigation {padding-top: 2.5%;}
+			.header3 {font-size: 150px; font-weight: bold; padding-top: 6%; color: purple;}
+			.please {font-size: 55px; font-family: Calibri, sans-serif; font-weight: bold; padding-top: 1.5%; padding-bottom: 0.5%;}
+			.text1 {font-size: 50px;}
+			.text2 {padding-top: 5%; font-size: 500%; font-color: orange; font-family: unseen, Arial, Helvetica, sans-serif; display: table; height: 100%; width: 100%;}
+			.or {font-size: 45px; font-style: italic; padding-top: 0.5%; padding-bottom: 0.5%;}
+			.transbox1 {background-color: rgba(0,0,0,0.4); color: orange; height: 60%;}
+			.transbox2 {background-color: rgba(0,0,0,0.2);}
+			@font-face {font-family: unseen; src: url("font/unseen.ttf"); /*For most other browsers*/}
+			@font-face {font-family: unseen; src: url("font/unseen.eot"); /*For IE browsers*/}
+			@font-face {font-family: special; src: url("font/special.eot"); /*For IE browsers*/}
+			@font-face {font-family: special; src: url("font/special.ttf"); /*For most other browsers*/}
+			@font-face {font-family: coolfont; src: url("font/special1.eot"); /*For IE browsers*/}
+			@font-face {font-family: coolfont; src: url("font/special1.ttf"); /*For most other browsers*/}
+			.format {display: table-cell; vertical-align: middle;}
+			.text3 {background-color: rgba(0,0,0,0.3); height: 100%; width: 90%; margin: 0 auto; text-align: left; font-family: special, Arial, Helvetica, sans-serif; color: white; font-size: 90px; font-weight: bold; padding-left: 5%; padding-right: 5%; display: table;}
+			.text4 {position: absolute; left: 55%; background-color: rgba(0,0,0,0.3); height: 100%; width: 15%; display: table; font-family: coolfont, Arial, Helvetica, sans-serif; color: white; font-size: 500%; font-weight: bold; margin: 0 auto;}
+			.centering {text-align: center;}
+			body a {text-decoration: none;}
+			.buttonformat {text-decoration: none; float: middle; margin-right: 7%; background-color: rgba(0,0,0,0.3); padding: 20px; border: 5px solid silver; border-radius: 5px; width: 100px; font-size: 150%;}
+			.buttonformat2 {text-decoration: none; float: middle; margin-right: 7%; background-color: rgba(0,0,0,0.3); padding: 20px; border: 5px solid purple; border-radius: 5px; width: 100px; font-size: 150%;}
+			#space {height: 5%;}
+			input[type="text"] {width:40%; font-family:sans-serif; font-size:100%; background-color: orange; text-align: center;}
+			#demo, #demo1 {font-size: 50%; padding-top: 5%;}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="wrap">
+			<div id="popupBoxOnePosition">
+				<div class="popupBoxWrapper">
+					<div class="popupBoxContent">
+						<div class="slide1">
+							<div class="topcorner"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><img src="images/x.gif" height="50px"/></a></div>
+							<div id="first"></div>
+							<div class="transbox2"><div class="header3">Check In</div></div>
+							<div class="transbox1">
+								<div class="please">Please</div>
+								<div class="hovering"><div class="text1"><a href="#third"><font color="orange"><u>scan your yearbook card&nbsp;&rarr;</u></font></a></div></div>
+								<div class="or">or</div>
+								<div class="hovering"><div class="text1"><a href="#second"><font color="orange"><u>enter your ID number&nbsp;&rarr;</u></font></a></div></div>
+							</div>
+						</div>
+						<div class="slide2">
+							<a href="#first"><div class="topcorner"><div class="buttonformat"><font color="white"><strong>Go back!</strong></font></div></div></a>
+							<div id="second"></div>
+							<div class="text2">Enter your ID number<div id="space2">&nbsp;</div><input type="text" id="login">&nbsp;&nbsp;<a href="javascript:void(0)" onclick="submit('#fourth');">Submit!</a><div id="demo"></div>
+</div>
+						</div>
+						<div class="slide3">
+							<a href="#first"><div class="topcorner"><div class="buttonformat2"><font color="purple"><strong>Go back!</strong></font></div></div></a>
+							<div id="third"></div>
+							<div class="text4"><div class="format"><div class="centering">Sorry, scanning your card is currently under maintenance.</div></div></div>
+						</div>
+						<div class="slide4">
+							<div id="fourth"></div>
+							<div class="text3"><div class="format">Thank you for checking in! When you are done, please check out! Click <a href="javascript:void(0)" onclick="reloading();"><font color="white">HERE</font></a> to exit!</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="popupBoxTwoPosition">
+				<div class="popupBoxWrapper">
+					<div class="popupBoxContent">
+						<div class="slide1">
+							<div class="topcorner"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxTwoPosition');"><img src="images/x.gif" height="50px"/></a></div>
+							<div id="firsts"></div>
+							<div class="transbox2"><div class="header3">Log Out</div></div>
+							<div class="transbox1">
+								<div class="please">Please</div>
+								<div class="hovering"><div class="text1"><a href="#thirds"><font color="orange"><u>scan your yearbook card&nbsp;&rarr;</u></font></a></div></div>
+								<div class="or">or</div>
+								<div class="hovering"><div class="text1"><a href="#seconds"><font color="orange"><u>enter your ID number&nbsp;&rarr;</u></font></a></div></div>
+							</div>
+						</div>
+						<div class="slide2">
+							<a href="#firsts"><div class="topcorner"><div class="buttonformat"><font color="white"><strong>Go back!</strong></font></div></div></a>
+							<div id="seconds"></div>
+							<div class="text2">Enter your ID number<div id="space2">&nbsp;</div><input type="text" id="logout">&nbsp;&nbsp;<a href="javascript:void(0)" onclick="logout('#fourths');">Submit!</a><div id="demo1"></div>
+</div>
+						</div>
+						<div class="slide3">
+							<a href="#firsts"><div class="topcorner"><div class="buttonformat2"><font color="purple"><strong>Go back!</strong></font></div></div></a>
+							<div id="thirds"></div>
+							<div class="text4"><div class="format"><div class="centering">Sorry, scanning your card is currently under maintenance.</div></div></div>
+						</div>
+						<div class="slide4">
+							<div id="fourths"></div>
+							<div class="text3"><div class="format">Thank you for logging out! When you are done, please check out! Click <a href="javascript:void(0)" onclick="reloading();"><font color="white">HERE</font></a> to exit!</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="vistext">
+
+				<div id="header">Yearbook Login</div>
+
+				<div class="navigation">
+					<nav>
+						<ul class="nav">
+							<a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><li>Check In</li></a>
+							<div id="space">&nbsp;</div>
+							<a href="javascript:void(0)" onclick="toggle_visibility('popupBoxTwoPosition');"><li>Check Out</li></a>
+						</ul>
+					</nav>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
